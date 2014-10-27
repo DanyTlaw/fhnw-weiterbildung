@@ -1,0 +1,23 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#course_table {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+
+	h1 {
+		width: 100%;
+		text-align: center;
+	}
+
+	table {	
+		margin-top: 25px;
+		width: 100%;
+		
+		td {
+			width: 100px;
+		}
+	}
+}
