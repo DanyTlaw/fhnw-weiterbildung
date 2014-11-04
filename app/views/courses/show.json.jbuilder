@@ -1,1 +1,1 @@
-json.extract! @course, :id, :name, :description, :startdate, :enddate, :lecturer, :created_at, :updated_at
+json.extract! @course, :id, :name, :description, :promoter, :location, :kanton, :country, :mode, :certificate, :duration, :created_at, :updated_at
