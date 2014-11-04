@@ -2,7 +2,7 @@
 <%= grid(@courses_grid, show_filters: :when_filtered) do |g|
 
   g.column name:  'Name', attribute: 'name'  do |course|
-    course.name
+    link_to course.name, course_path(course)
   end
 
   g.column  name:  'Beschreibung', attribute: 'description' do |course|
@@ -17,15 +17,11 @@
     course.certificate
   end
 
-  g.column name:  'Form', attribute: 'mode' do |course|
-    course.mode
+  g.column name:  'Form', attribute: 'mode', custom_filter: :auto  do |course|
+    course.mode  
   end
 
   g.column name:  'Dauer', attribute: 'duration' do |course|
     course.duration
-  end
-
-  g.column   do |course|
-    link_to('Edit', edit_course_path(course))
   end
 end -%>
