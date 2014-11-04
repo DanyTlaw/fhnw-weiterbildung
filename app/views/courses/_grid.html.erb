@@ -1,28 +1,28 @@
 <%# show_filters: :when_filtered %>
 <%= grid(@courses_grid, show_filters: :when_filtered) do |g|
 
-  g.column name:  'ID', attribute: 'id', filter: false do |course| 
-    course.id
-  end
-
   g.column name:  'Name', attribute: 'name'  do |course|
     course.name
   end
 
-  g.column  name:  'Description', attribute: 'description' do |course|
+  g.column  name:  'Beschreibung', attribute: 'description' do |course|
     course.description
   end
 
-  g.column  name:  'Start', attribute: 'startdate' do |course|
-    course.startdate
+  g.column  name:  'Ort', attribute: 'location' do |course|
+    course.location
   end
 
-  g.column name:  'End', attribute: 'enddate' do |course|
-    course.enddate
+  g.column name:  'Abschluss', attribute: 'certificate' do |course|
+    course.certificate
   end
 
-  g.column name:  'Lecturer', attribute: 'lecturer' do |course|
-    course.lecturer
+  g.column name:  'Form', attribute: 'mode' do |course|
+    course.mode
+  end
+
+  g.column name:  'Dauer', attribute: 'duration' do |course|
+    course.duration
   end
 
   g.column   do |course|
