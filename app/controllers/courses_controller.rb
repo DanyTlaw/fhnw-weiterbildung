@@ -4,9 +4,16 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    # Old style
+    # @courses = Course.all
+    # New - Dynamic Grid
+    @courses_grid = initialize_grid(Course)
   end
 
+  def index2
+    # Dynamic Grid
+
+  end
   # GET /courses/1
   # GET /courses/1.json
   def show

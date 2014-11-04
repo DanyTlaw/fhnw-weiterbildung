@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap
 //= require select2
+//= require wice_grid
