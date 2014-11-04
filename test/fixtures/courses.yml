@@ -3,13 +3,21 @@
 one:
   name: MyString
   description: MyString
-  startdate: 2014-10-27
-  enddate: 2014-10-27
-  lecturer: MyString
+  promoter: MyString
+  location: MyString
+  kanton: MyString
+  country: MyString
+  type: 
+  certificate: MyString
+  duration: MyString
 
 two:
   name: MyString
   description: MyString
-  startdate: 2014-10-27
-  enddate: 2014-10-27
-  lecturer: MyString
+  promoter: MyString
+  location: MyString
+  kanton: MyString
+  country: MyString
+  type: 
+  certificate: MyString
+  duration: MyString
