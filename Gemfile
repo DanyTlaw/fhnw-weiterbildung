@@ -38,6 +38,10 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Image Upload and processing
+gem "carrierwave"
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
