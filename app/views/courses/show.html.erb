@@ -50,5 +50,10 @@
   <%= image_tag @course.image_url(:thumb) if @course.image? %>
 </p>
 
+<p>
+  <strong>Beschreibung:</strong>
+  <%= @course.detail %>
+</p>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

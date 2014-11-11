@@ -40,7 +40,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Image Upload and processing
 gem "carrierwave"
-gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'rmagick', '2.13.2', :git => 'http://github.com/rmagick/rmagick.git', :require => 'RMagick'
 
 # Use unicorn as the app server
 # gem 'unicorn'
