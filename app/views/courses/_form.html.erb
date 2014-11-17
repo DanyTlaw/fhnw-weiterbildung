@@ -12,44 +12,56 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :titel %><br>
+    <%= f.text_field :titel %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :kurstyp %><br>
+    <%= f.text_field :kurstyp %>
   </div>
   <div class="field">
-    <%= f.label :promoter %><br>
-    <%= f.text_field :promoter %>
+    <%= f.label :start %><br>
+    <%= f.date_select :start %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.label :anbieter %><br>
+    <%= f.text_field :anbieter %>
   </div>
   <div class="field">
-    <%= f.label :kanton %><br>
-    <%= f.text_field :kanton %>
+    <%= f.label :ort %><br>
+    <%= f.text_field :ort %>
   </div>
   <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
+    <%= f.label :preis %><br>
+    <%= f.number_field :preis %>
   </div>
   <div class="field">
-    <%= f.label :mode %><br>
-    <%= f.text_field :mode %>
+    <%= f.label :inhalt %><br>
+    <%= f.text_field :inhalt %>
   </div>
   <div class="field">
-    <%= f.label :certificate %><br>
-    <%= f.text_field :certificate %>
+    <%= f.label :zielpublikum %><br>
+    <%= f.text_field :zielpublikum %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.text_field :duration %>
+    <%= f.label :zulassung %><br>
+    <%= f.text_field :zulassung %>
   </div>
   <div class="field">
-    <%= f.label "Beschreibung" %><br>
-    <%= f.text_field :detail %>  
+    <%= f.label :abschluss %><br>
+    <%= f.text_field :abschluss %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br>
+    <%= f.text_field :info %>
+  </div>
+  <div class="field">
+    <%= f.label :leitung %><br>
+    <%= f.text_field :leitung %>
+  </div>
+  <div class="field">
+    <%= f.label :kontakt %><br>
+    <%= f.text_field :kontakt %>
   </div>
   <div class="field">
     <%= f.file_field :image %>

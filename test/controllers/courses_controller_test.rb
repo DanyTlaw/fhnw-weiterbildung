@@ -18,7 +18,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { certificate: @course.certificate, country: @course.country, description: @course.description, duration: @course.duration, kanton: @course.kanton, location: @course.location, name: @course.name, promoter: @course.promoter, type: @course.type }
+      post :create, course: { abschluss: @course.abschluss, anbieter: @course.anbieter, image: @course.image, info: @course.info, inhalt: @course.inhalt, kontakt: @course.kontakt, kurstyp: @course.kurstyp, leitung: @course.leitung, ort: @course.ort, preis: @course.preis, start: @course.start, titel: @course.titel, zielpublikum: @course.zielpublikum, zulassung: @course.zulassung }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +35,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    patch :update, id: @course, course: { certificate: @course.certificate, country: @course.country, description: @course.description, duration: @course.duration, kanton: @course.kanton, location: @course.location, name: @course.name, promoter: @course.promoter, type: @course.type }
+    patch :update, id: @course, course: { abschluss: @course.abschluss, anbieter: @course.anbieter, image: @course.image, info: @course.info, inhalt: @course.inhalt, kontakt: @course.kontakt, kurstyp: @course.kurstyp, leitung: @course.leitung, ort: @course.ort, preis: @course.preis, start: @course.start, titel: @course.titel, zielpublikum: @course.zielpublikum, zulassung: @course.zulassung }
     assert_redirected_to course_path(assigns(:course))
   end
 

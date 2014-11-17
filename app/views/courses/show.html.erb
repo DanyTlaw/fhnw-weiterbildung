@@ -1,58 +1,73 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @course.name %>
+  <strong>Titel:</strong>
+  <%= @course.titel %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @course.description %>
+  <strong>Kurstyp:</strong>
+  <%= @course.kurstyp %>
 </p>
 
 <p>
-  <strong>Promoter:</strong>
-  <%= @course.promoter %>
+  <strong>Start:</strong>
+  <%= @course.start %>
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @course.location %>
+  <strong>Anbieter:</strong>
+  <%= @course.anbieter %>
 </p>
 
 <p>
-  <strong>Kanton:</strong>
-  <%= @course.kanton %>
+  <strong>Ort:</strong>
+  <%= @course.ort %>
 </p>
 
 <p>
-  <strong>Country:</strong>
-  <%= @course.country %>
+  <strong>Preis:</strong>
+  <%= @course.preis %>
 </p>
 
 <p>
-  <strong>Mode:</strong>
-  <%= @course.mode %>
+  <strong>Inhalt:</strong>
+  <%= @course.inhalt %>
 </p>
 
 <p>
-  <strong>Certificate:</strong>
-  <%= @course.certificate %>
+  <strong>Zielpublikum:</strong>
+  <%= @course.zielpublikum %>
 </p>
 
 <p>
-  <strong>Duration:</strong>
-  <%= @course.duration %>
+  <strong>Zulassung:</strong>
+  <%= @course.zulassung %>
+</p>
+
+<p>
+  <strong>Abschluss:</strong>
+  <%= @course.abschluss %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @course.info %>
+</p>
+
+<p>
+  <strong>Leitung:</strong>
+  <%= @course.leitung %>
+</p>
+
+<p>
+  <strong>Kontakt:</strong>
+  <%= @course.kontakt %>
 </p>
 
 <p>
   <strong>Image:</strong> <br />
   <%= image_tag @course.image_url(:thumb) if @course.image? %>
-</p>
-
-<p>
-  <strong>Beschreibung:</strong>
-  <%= @course.detail %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

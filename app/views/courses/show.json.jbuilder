@@ -1,1 +1,1 @@
-json.extract! @course, :id, :name, :description, :promoter, :location, :kanton, :country, :mode, :certificate, :duration, :created_at, :updated_at
+json.extract! @course, :id, :titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image, :created_at, :updated_at

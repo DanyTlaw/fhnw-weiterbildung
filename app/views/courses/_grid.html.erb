@@ -1,27 +1,27 @@
 <%# show_filters: :when_filtered %>
 <%= grid(@courses_grid, show_filters: :when_filtered) do |g|
 
-  g.column name:  'Name', attribute: 'name'  do |course|
-    link_to course.name, course_path(course)
+  g.column name:  'Titel', attribute: 'titel'  do |course|
+    link_to course.titel, course_path(course)
   end
 
-  g.column  name:  'Themenbereich', attribute: 'description' do |course|
-    course.description
+  g.column  name:  'Kurstyp', attribute: 'kurstyp' do |course|
+    course.kurstyp
   end
 
-  g.column  name:  'Ort', attribute: 'location' do |course|
-    course.location
+  g.column  name:  'Start', attribute: 'start' do |course|
+    course.start
   end
 
-  g.column name:  'Abschluss', attribute: 'certificate' do |course|
-    course.certificate
+  g.column name:  'Anbieter', attribute: 'anbieter' do |course|
+    course.anbieter
   end
 
-  g.column name:  'Form', attribute: 'mode', custom_filter: :auto  do |course|
-    course.mode  
+  g.column name:  'Ort', attribute: 'ort', custom_filter: :auto  do |course|
+    course.ort 
   end
 
-  g.column name:  'Dauer', attribute: 'duration' do |course|
-    course.duration
+  g.column name:  'Preis', attribute: 'preis' do |course|
+    course.preis
   end
 end -%>

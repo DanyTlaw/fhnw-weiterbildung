@@ -1,4 +1,4 @@
 json.array!(@courses) do |course|
-  json.extract! course, :id, :name, :description, :promoter, :location, :kanton, :country, :mode, :certificate, :duration
+  json.extract! course, :id, :titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image
   json.url course_url(course, format: :json)
 end
