@@ -5,23 +5,23 @@
     link_to course.titel, course_path(course)
   end
 
-  g.column  name:  'Kurstyp', attribute: 'kurstyp' do |course|
+  g.column  name:  'Kurstyp', attribute: 'kurstyp', custom_filter: :auto do |course|
     course.kurstyp
   end
 
   g.column  name:  'Start', attribute: 'start' do |course|
-    course.start
+    course.start.strftime("%v")
   end
 
   g.column name:  'Anbieter', attribute: 'anbieter' do |course|
     course.anbieter
   end
 
-  g.column name:  'Ort', attribute: 'ort', custom_filter: :auto  do |course|
+  g.column name:  'Ort', attribute: 'ort'  do |course|
     course.ort 
   end
 
   g.column name:  'Preis', attribute: 'preis' do |course|
-    course.preis
+    number_to_currency(course.preis, locale: :ch)
   end
 end -%>

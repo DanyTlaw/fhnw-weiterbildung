@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :kurstyp %><br>
-    <%= f.text_field :kurstyp %>
+    <%= f.select :kurstyp, options_for_select(%w[MAS EMBA DAS CAS Kurs Fachtagung Infoveranstaltung]) %>
   </div>
   <div class="field">
     <%= f.label :start %><br>
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :inhalt %><br>
-    <%= f.text_field :inhalt %>
+    <%= f.text_area :inhalt %>
   </div>
   <div class="field">
     <%= f.label :zielpublikum %><br>
@@ -52,8 +52,8 @@
     <%= f.text_field :abschluss %>
   </div>
   <div class="field">
-    <%= f.label :info %><br>
-    <%= f.text_field :info %>
+    <%= f.label "Weiterführende Informationen" %><br>
+    <%= f.url_field :info %>
   </div>
   <div class="field">
     <%= f.label :leitung %><br>
@@ -61,7 +61,7 @@
   </div>
   <div class="field">
     <%= f.label :kontakt %><br>
-    <%= f.text_field :kontakt %>
+    <%= f.email_field :kontakt %>
   </div>
   <div class="field">
     <%= f.file_field :image %>
