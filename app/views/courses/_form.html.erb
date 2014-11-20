@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div id="rdetails"> 
   <div class="field">
     <%= f.label :titel %><br>
     <%= f.text_field :titel %>
@@ -36,9 +36,11 @@
     <%= f.number_field :preis %>
   </div>
   <div class="field">
-    <%= f.label :inhalt %><br>
-    <%= f.text_area :inhalt %>
-  </div>
+    <%= image_tag @course.image_url(:thumb) if @course.image? %>  
+    <%= f.file_field :image %>
+  </div>  
+ </div>
+ <div id="ldetails"> 
   <div class="field">
     <%= f.label :zielpublikum %><br>
     <%= f.text_field :zielpublikum %>
@@ -64,9 +66,13 @@
     <%= f.email_field :kontakt %>
   </div>
   <div class="field">
-    <%= f.file_field :image %>
-  </div>
+    <%= f.label :inhalt %><br>
+    <%= f.text_area :inhalt %>
+  </div>  
+ </div> 
+<div id="bdetails"> 
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>  
 <% end %>

@@ -30,7 +30,7 @@
     <%= number_to_currency(@course.preis, locale: :ch) %>
   </p> 
   <p class="margin_top">
-    <strong>Image:</strong> <br />
+    <strong>Bild:</strong> <br />
     <%= image_tag @course.image_url(:thumb) if @course.image? %>
   </p>   
 </div>
@@ -76,4 +76,5 @@
   <%= link_to 'Edit', edit_course_path(@course) %> |
   <%= link_to 'Back', courses_path %> 
 </div>
+
 
