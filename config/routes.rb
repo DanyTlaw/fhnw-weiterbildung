@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'statics#welcome'
 
+  get '/mycourses', to: 'courses#mycourses' 
+
   devise_for :users
   
 end
