@@ -10,10 +10,10 @@ class CoursesController < ApplicationController
     @courses_grid = initialize_grid(Course)
   end
 
-  def index2
-    # Dynamic Grid
-
+  def mycourses
+    @courses = Course.where(owner: current_user)
   end
+
   # GET /courses/1
   # GET /courses/1.json
   def show
@@ -32,6 +32,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
+    @course.owner = current_user
 
     respond_to do |format|
       if @course.save
@@ -76,6 +77,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image)
+      params.require(:course).permit(:titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image, :owner)
     end
 end
