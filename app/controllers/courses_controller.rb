@@ -1,11 +1,10 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /courses
   # GET /courses.json
   def index
-    # Old style
-    # @courses = Course.all
     # New - Dynamic Grid
     @courses_grid = initialize_grid(Course)
   end
