@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -15,13 +14,6 @@ gem "select2-rails"
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-gem 'devise', '~> 3.3.0'
-
-# Gem for dynamic Table
-gem "wice_grid", '3.4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -42,14 +34,16 @@ gem 'bcrypt', '~> 3.1.7'
 gem "carrierwave"
 gem 'rmagick', '2.13.2', :git => 'http://github.com/rmagick/rmagick.git', :require => 'RMagick'
 
+# PDF creation
 gem 'prawn-rails'
+
+# Authorization
+gem 'cancancan', '~> 1.9'
+gem 'devise', '~> 3.3.0'
+
+# Allows the use of the dynamic Table
+gem "wice_grid", '3.4.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 
