@@ -12,19 +12,301 @@
  *= require_tree .
  *= require select2 
  */
+
+
 @import "bootstrap";
 
+#wrapper{
+		 min-height:100%;
+		 position: relative;
+}
+
 .content{
-	width: 80%;
-	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	 margin-top: 70px;
+	 padding-bottom: 200px;
+
+}
+
+
+
+.navstyle {
+
+	background-color: #101b27;
+	
+
+}
+
+
+
+.navbar-default .navbar-nav li a {
+			color: #FFFFFF;
+			font-size: 15px;
+			font-weight: 400;
+			font-family: bariol, sans-serif;
+		
+
+			
+}
+
+
+
+.navbar-default .navbar-nav li a:hover {
+			color: #5A95E5;
+
+
+}
+
+.navbar-btn{
+
+		margin-right: 5px;
+}
+
+.navbar {
+	
+	padding:10px;
+
+	.navbar-nav{
+		display: inline;
+	}
+}
+
+.navbar-default .navbar-nav .open a:focus {
+	background-color: #101b27;
+	color: #5A95E5;
+}
+
+.dropdown-menu {
+	background-color: #101b27;
+	
+
+	li{
+		color: #FFF;
+		a:hover{
+			background-color: #101b27;
+		}
+	}
 }
 
 .ads{
 	width: 10%;
 	margin-top: 30px;
+	margin-right: 100px;
 	float: right;
 }
 
-body { padding-top: 40px; }
+.container {
+	.alert{
+
+		margin-top: 50px;
+		position: fixed;
+		width: 50%;
+		
+	}
+}
+
+
+
+
+.footer{
+    width: 100%;
+    height: 200px;
+    border-top-style: solid;
+    border-width: 1px;
+    background-color: #101b27;	
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+
+    	ul {
+    		  	font-family: bariol, sans-serif;
+    		  	list-style-type: none;
+    		    font-size: 13px;
+  				line-height: 18px;
+  				padding-top: 20px;
+  				float:left;
+    		  li{
+    		  		
+    		  		padding-top: 10px;
+
+    		  		a{
+    		  			color: #FFFFFF;
+						font-size: 15px;
+						font-weight: 400;
+						font-family: bariol, sans-serif;
+    		  		}
+    		  }
+
+    	}
+
+}
+
+.footer ul li a:hover{
+		   color: #5A95E5;
+		   text-decoration: none;
+
+}
+
+.socialmedia-wrapper{
+    float:right;
+    padding-right: 20px;
+}
+.socialmedia-wrapper img{
+    margin-top: 20px;
+
+}
+
+
+
+
+/************************************************************************************
+Icon EFFEKTE
+************************************************************************************/
+
+.fbsocial-roll {
+    background-image: image-url('48x48-Circle-52-FB.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+.fbsocial-roll:hover {
+    background-image: image-url('48x48-Circle-57-FB.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+.twsocial-roll {
+    background-image: image-url('48x48-Circle-52-TW.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+.twsocial-roll:hover {
+    background-image: image-url('48x48-Circle-64-TW.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+.pinsocial-roll {
+    background-image: image-url('48x48-Circle-52-P.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+.pinsocial-roll:hover {
+    background-image: image-url('48x48-Circle-82-P.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+.lisocial-roll {
+    background-image: image-url('48x48-Circle-52-LI.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+.lisocial-roll:hover {
+    background-image: image-url('48x48-Circle-58-LI.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+.gsocial-roll {
+    background-image: image-url('48x48-Circle-52-GP.png');
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+.gsocial-roll:hover {
+    background-image: image-url('48x48-Circle-81-GP.png');
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+
+html, body { 
+	height: 100%; 
+	margin:0;
+	}
+
+/* User sign in and sign forms. */
+
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
