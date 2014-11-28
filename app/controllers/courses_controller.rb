@@ -21,6 +21,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+
   end
 
   # GET /courses/1/edit
@@ -31,8 +32,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
-    @course.owner = current_user
-
+    @course.owner = current_user.id
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
