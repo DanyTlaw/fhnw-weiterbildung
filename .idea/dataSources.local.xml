@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails fhnw-weiterbildung: development" uuid="4105bf8b-69bd-4c99-989a-6a27e3605af7">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfdadfc5dfd9dfdedfcddfd8dfcfdfd9</user-password>
+    </data-source>
+    <data-source name="Rails fhnw-weiterbildung: test" uuid="b3dbd434-657e-492b-a3b9-9cb4743e0a65">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfdadfc5dfd9dfdedfcddfd8dfcfdfd9</user-password>
+    </data-source>
+  </component>
+</project>

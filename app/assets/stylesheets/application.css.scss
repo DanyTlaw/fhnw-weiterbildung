@@ -95,8 +95,12 @@
 }
 
 .container {
+  width: 800px;
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
 	.alert{
-
+        z-index: 999;
 		margin-top: 50px;
 		position: fixed;
 		width: 50%;
@@ -113,10 +117,10 @@
     border-top-style: solid;
     border-width: 1px;
     background-color: #101b27;	
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: 0px;
-
+    clear: both;
     	ul {
     		  	font-family: bariol, sans-serif;
     		  	list-style-type: none;
@@ -144,6 +148,7 @@
 		   color: #5A95E5;
 		   text-decoration: none;
 
+
 }
 
 .socialmedia-wrapper{
@@ -155,7 +160,16 @@
 
 }
 
+/************************************************************************************
+Ads
+************************************************************************************/
+#siteAds{
+  float: left;
 
+  height: auto;
+  width: auto;
+
+}
 
 
 /************************************************************************************

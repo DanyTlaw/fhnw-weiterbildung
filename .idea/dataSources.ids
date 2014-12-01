@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails fhnw-weiterbildung: development" uuid="4105bf8b-69bd-4c99-989a-6a27e3605af7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails fhnw-weiterbildung: test" uuid="b3dbd434-657e-492b-a3b9-9cb4743e0a65">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

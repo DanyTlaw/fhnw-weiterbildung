@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3291225139">
+    <data-source source="LOCAL" name="Rails fhnw-weiterbildung: development" uuid="4105bf8b-69bd-4c99-989a-6a27e3605af7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/fhnw_dev</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails fhnw-weiterbildung: test" uuid="b3dbd434-657e-492b-a3b9-9cb4743e0a65">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/fhnw_test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

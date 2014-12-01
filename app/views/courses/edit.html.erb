@@ -1,8 +1,12 @@
-<h1>Kurs bearbeiten</h1>
-
-<%= render 'form' %>
-
-<div id="bdetails">
-	<%= link_to 'Show', @course %> |
-	<%= link_to 'Back', courses_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9" style="width: 100%">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Kurs bearbeiten</h3>
+        </div>
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
 </div>

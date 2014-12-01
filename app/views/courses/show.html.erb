@@ -1,84 +1,96 @@
 <!--<p id="notice"><%= notice %></p>-->
 
-<div id="title_pdf">
-  <h2>Kurs: <%= @course.titel %>
-    <span><%= link_to "PDF speichern", course_path(@course, :format => 'pdf'), class: 'btn btn-default' %></span>
-  </h2>  
-</div>
  
+<div class="container">
+      <div class="row">
+        <div class="col-md-8" style="width: 100%">
+          <div class="panel panel-primary">        
+            <div class="panel-heading clearfix">
+              <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Kursinformationen zum Kurs <%= @course.titel %></h4>
+                <div class="btn-group pull-right">
+                  <%= link_to "PDF speichern", course_path(@course, :format => 'pdf'), class: 'btn btn-default btn-sm ' %>
+                  <% if can? :cud, @course %>
+                    <%= link_to "Kurs bearbeiten", edit_course_path(@course) , class: 'btn btn-default btn-sm' %>
+                  <% end %>
+                </div>               
+            </div>
+             <div class="panel-body" >
+                  <div id="rdetails" class="padding_top"> 
+                    <table id="showcourse">
+                      <tr>
+                        <td><strong>Kurstyp:</strong></td>
+                        <td><%= @course.kurstyp %></td>
+                      </tr>
+                    
+                      <tr>
+                        <td><strong>Start:</strong></td>
+                        <td><%= @course.start.strftime("%v") %></td>
+                      </tr>
 
-<div id="rdetails" class="padding_top"> 
-  <p>
-    <strong>Kurstyp:</strong>
-    <%= @course.kurstyp %>
-  </p>
+                      <tr>
+                        <td><strong>Anbieter:</strong></td>
+                        <td><%= @course.anbieter %></td>
+                      </tr>
 
-  <p>
-    <strong>Start:</strong>
-    <%= @course.start.strftime("%v") %>
-  </p>
+                      <tr>
+                        <td><strong>Leitung:</strong></td>
+                        <td><%= @course.leitung %></td>
+                      </tr> 
 
-  <p>
-    <strong>Anbieter:</strong>
-    <%= @course.anbieter %>
-  </p>
+                      <tr>
+                        <td><strong>Ort:</strong></td>
+                        <td><%= @course.ort %></td>
+                      </tr>
 
-  <p>
-    <strong>Leitung:</strong>
-    <%= @course.leitung %>
-  </p>  
+                      <tr>
+                        <td><strong>Preis:</strong></td>
+                        <td><%= number_to_currency(@course.preis, locale: :ch) %></td>
+                      </tr>
+                    </table> 
+                    <p class="padding_top">
+                      <strong>Bild:</strong> <br />
+                      <%= image_tag @course.image_url(:thumb) if @course.image? %>
+                    </p>   
+                  </div>
 
-  <p>
-    <strong>Ort:</strong>
-    <%= @course.ort %>
-  </p>
+                  <div id="ldetails" class="padding_top">
+                    <table id="showcourse">
+                      <tr>
+                        <td><strong>Zielpublikum:</strong></td>
+                        <td><%= @course.zielpublikum %></td>
+                      </tr>
 
-  <p>
-    <strong>Preis:</strong>
-    <%= number_to_currency(@course.preis, locale: :ch) %>
-  </p> 
-  <p class="padding_top">
-    <strong>Bild:</strong> <br />
-    <%= image_tag @course.image_url(:thumb) if @course.image? %>
-  </p>   
-</div>
+                      <tr>
+                        <td><strong>Zulassung:</strong></td>
+                        <td><%= @course.zulassung %></td>
+                      </tr>
 
-<div id="ldetails" class="padding_top">
-  <p>
-    <strong>Zielpublikum:</strong>
-    <%= @course.zielpublikum %>
-  </p>
+                      <tr>
+                        <td><strong>Abschluss:</strong></td>
+                        <td><%= @course.abschluss %></td>
+                      </tr>
 
-  <p>
-    <strong>Zulassung:</strong>
-    <%= @course.zulassung %>
-  </p>
+                      <tr>
+                        <td><strong>Info:</strong></td>
+                        <td><%= link_to 'Link', url_protocol(@course.info), target: '_blank' %></td>
+                      </tr>
 
-  <p>
-    <strong>Abschluss:</strong>
-    <%= @course.abschluss %>
-  </p>
+                      <tr>
+                        <td><strong>Kontakt:</strong></td>
+                        <td><%= mail_to @course.kontakt %></td>
 
-  <p>
-    <strong>Info:</strong>
-    <%= link_to 'Link', url_protocol(@course.info), target: '_blank' %>
-  </p>
-
-  <p>
-    <strong>Kontakt:</strong>
-    <%= mail_to @course.kontakt %>
-  </p> 
-  <p class="padding_top">
-    <strong>Inhalt:</strong>
-    <%=simple_format h @course.inhalt %>
-  </p>   
-</div>
-
-
-<div id="bdetails">
-  <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_course_path(@course) %> |
-    <%= link_to 'Back', courses_path %> 
-  <% end %>  
-</div>
+                      </tr>
+                      <tr><td></td></tr>
+                    </table>
+                      <p class="padding_top">
+                        <strong>Inhalt:</strong>
+                        <%=simple_format h @course.inhalt %>
+                      </p>   
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
 

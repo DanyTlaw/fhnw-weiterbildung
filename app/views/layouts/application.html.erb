@@ -12,9 +12,14 @@
   <div id="wrapper">
         <%= render 'layouts/navigation' %>
         <div class ="content">
-        <%= yield %>           
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+            <% if !current_page?(root_path) %>
+                <%= render 'layouts/siteAds' %>
+             <% end %>
         </div>
-        <%= render 'layouts/footer' %>
+
+            <%= render 'layouts/footer' %>
 
   </div>
  </body>
