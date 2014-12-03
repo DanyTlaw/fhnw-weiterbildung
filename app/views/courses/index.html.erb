@@ -6,7 +6,7 @@
           <h3 class="panel-title pull-left">Kursübersicht <%= h @searchparam.blank? ? "" : "(Suchresultate für: #{@searchparam})" %> </h3>
             <% if @searchparam.blank? %>
             <% else %>
-              <div class="pull-right whitelink"><%= link_to "[x] Suche löschen", courses_path, class: 'whitelink' %></div>
+              <div class="pull-right"><%= link_to "[x] Suche löschen", courses_path, style: "color: #FFF" %></div>
             <% end %>
         </div>
         <%= render partial: 'grid' %>
