@@ -34,7 +34,15 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @user = User.find(current_user)
+    @course = Course.new(course_params)
+    @course.owner = current_user.id
+    @user = current_user
+
+    #erhöht den profilstatus nur beim ersten mal Kurs erstellen
+    if Course.where(owner:  current_user).blank?
+      @user.increment!(:profilstatus)
+    end
+
     if @user.ccounter >= 1
       @course = Course.new(course_params)
       @course.owner = current_user.id
