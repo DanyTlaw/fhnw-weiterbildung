@@ -1,0 +1,43 @@
+<%= form_for(@profil) do |f| %>
+  <% if @profil.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profil.errors.count, "error") %> prohibited this profil from being saved:</h2>
+
+      <ul>
+      <% @profil.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="panel-body" >
+      <div class="col-md-8">
+        <div class="form-group" style="float: left">
+
+          <div class="field">
+            <%= f.label :schulname, :class=>"control-label" %><br>
+            <%= f.text_field :schulname, :placeholder => 'Schulname', :class=>"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :standort, :class=>"control-label" %><br>
+            <%= f.text_field :standort, :placeholder => 'Standort', :class=>"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :fachbereich, :class=>"control-label" %><br>
+            <%= f.text_field :fachbereich, :placeholder => 'Fachbereich', :class=>"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :info, :class=>"control-label" %><br>
+            <%= f.text_area :info, :placeholder => 'Informationen', :class=>"form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :link, :class=>"control-label" %><br>
+            <%= f.url_field :link, :placeholder => 'link', :class=>"form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Erfassen", :class=>'btn btn-primary'  %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,8 @@
       <ul class="nav navbar-nav navbar-left">
         <li><%= image_tag("fhlogo.png")%></li>
         <li><%= link_to "Startseite", root_path %></li>
-        <li><%= link_to "Kursübersicht", courses_path %></li>     
+        <li><%= link_to "Kursübersicht", courses_path %></li>
+        <li><%= link_to "Fachhochschulen", profils_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
@@ -12,8 +13,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to "Meine Kurse", mycourses_path %></li>
-              <li class="divider"></li>
-              <li><%= link_to "Neuen Kurs eintragen", new_course_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Neuen Kurs eintragen", new_course_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Mein Profil", myprofil_path %></li>
               </ul>
           </li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
@@ -24,7 +27,7 @@
               <button class="btn btn-primary navbar-btn">Login</button>
             </form>
           </li>
-            
+
                     <li>
             <form action= "<%= new_user_registration_path %>" >
               <button class="btn btn-primary navbar-btn">Sign Up</button></button>
