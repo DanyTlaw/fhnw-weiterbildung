@@ -34,16 +34,21 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(course_params)
-    @course.owner = current_user.id
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+    @user = User.find(current_user)
+    if @user.ccounter >= 1
+      @course = Course.new(course_params)
+      @course.owner = current_user.id
+      respond_to do |format|
+        if @course.save
+          format.html { redirect_to @course, notice: 'Course was successfully created.' }
+          format.json { render :show, status: :created, location: @course }
+        else
+          format.html { render :new }
+          format.json { render json: @course.errors, status: :unprocessable_entity }
+        end
       end
+    else  
+      format.html { redirect_to dashboard_path, notice: 'Keine bezahlten Kurse mehr übrig.' }
     end
   end
 
