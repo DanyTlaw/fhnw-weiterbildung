@@ -36,6 +36,13 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.owner = current_user.id
+    @user = current_user
+
+    #erhöht den profilstatus nur beim ersten mal Kurs erstellen
+    if Course.where(owner:  current_user).blank?
+      @user.increment!(:profilstatus)
+    end
+
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
