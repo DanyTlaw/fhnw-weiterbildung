@@ -2,10 +2,14 @@
   <div class="row">
     <div class="col-md-9" style="width: 100%">
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Kursübersicht</h3>
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title pull-left">Kursübersicht <%= h @searchparam.blank? ? "" : "(Suchresultate für: #{@searchparam})" %> </h3>
+            <% if @searchparam.blank? %>
+            <% else %>
+              <div class="pull-right whitelink"><%= link_to "[x] Suche löschen", courses_path, class: 'whitelink' %></div>
+            <% end %>
         </div>
-  <%= render partial: 'grid' %>
+        <%= render partial: 'grid' %>
       </div>
     </div>
   </div>

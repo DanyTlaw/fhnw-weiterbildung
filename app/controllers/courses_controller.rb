@@ -5,11 +5,15 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    # Search parameter, if empty show all
+    @searchparam = params[:search]
+
     # New - Dynamic Grid
-    @courses_grid = initialize_grid(Course)
+    @courses_grid = initialize_grid(Course.where("titel ILIKE ?", "%#{@searchparam}%"))
   end
 
   def mycourses
+    # Show only his courses
     @courses = Course.where(owner: current_user)
   end
 
@@ -21,7 +25,6 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-
   end
 
   # GET /courses/1/edit
