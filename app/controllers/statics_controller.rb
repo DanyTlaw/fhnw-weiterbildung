@@ -7,4 +7,9 @@ class StaticsController < ApplicationController
   	render :home
   end
 
+  def dashboard
+    authenticate_user!
+    render :dashboard
+  end
+
 end

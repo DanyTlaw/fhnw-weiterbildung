@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125073616) do
+ActiveRecord::Schema.define(version: 20141202225658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20141125073616) do
     t.integer  "owner"
   end
 
+  create_table "profils", force: true do |t|
+    t.integer  "user_id"
+    t.string   "schulname"
+    t.string   "standort"
+    t.string   "fachbereich"
+    t.string   "info"
+    t.string   "link"
+    t.integer  "kurse"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -49,6 +61,7 @@ ActiveRecord::Schema.define(version: 20141125073616) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "profilstatus"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

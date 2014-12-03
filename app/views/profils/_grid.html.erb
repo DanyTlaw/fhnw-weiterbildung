@@ -1,0 +1,24 @@
+<%# show_filters: :when_filtered %>
+<%= grid(@profils_grid, show_filters: :when_filtered) do |g|
+
+  g.column name:  'Schulname', attribute: 'schulname'  do |profil|
+    link_to profil.schulname, profil_path(profil)
+  end
+
+  g.column  name:  'Fachbereich', attribute: 'fachbereich', custom_filter: :auto do |profil|
+    profil.fachbereich
+  end
+
+  g.column  name:  'Standort', attribute: 'standort' do |profil|
+    profil.standort
+  end
+
+  g.column name:  'Link', attribute: 'link' do |profil|
+    profil.link
+  end
+
+  g.column name:  'Info', attribute: 'info'  do |profil|
+    profil.info
+  end
+
+end -%>

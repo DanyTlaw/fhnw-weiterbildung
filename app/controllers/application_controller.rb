@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   
 	def after_sign_in_path_for(resource)
-	  home_path
+	  dashboard_path
 	end
 
   rescue_from CanCan::AccessDenied do |exception|
