@@ -43,14 +43,24 @@ class CoursesController < ApplicationController
       @user.increment!(:profilstatus)
     end
 
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+    # Does he have enough credits to create a course?
+    if @user.ccounter >= 1
+      @course = Course.new(course_params)
+      @course.owner = current_user.id
+      respond_to do |format|
+        if @course.save
+          # Created, so edit counter
+          @user.update_attribute(:ccounter, @user.ccounter-1)
+          format.html { redirect_to @course, notice: 'Course was successfully created.' }
+          format.json { render :show, status: :created, location: @course }
+        else
+          format.html { render :new }
+          format.json { render json: @course.errors, status: :unprocessable_entity }
+        end
       end
+    else  
+      # If not, inform him and abort creation
+      redirect_to dashboard_path, alert: 'Keine bezahlten Kurse mehr übrig.'
     end
   end
 

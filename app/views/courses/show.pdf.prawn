@@ -1,7 +1,11 @@
 pdf.text "Kursdetails: #{@course.titel}", :size => 30, :style => :bold
 pdf.stroke_horizontal_rule
 
-pdf.move_down(60)
+pdf.move_down(30)
+
+pdf.image "#{Rails.root}/public#{@course.image_url(:thumb)}", :position => :center
+
+pdf.move_down(30)
 
 tabledata = [
 				["<b>Kurstyp</b>", @course.kurstyp],

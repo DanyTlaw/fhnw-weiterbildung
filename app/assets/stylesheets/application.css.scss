@@ -24,6 +24,11 @@
 .content{
 	 margin-top: 70px;
 	 padding-bottom: 200px;
+     .alert{
+        z-index: 999;
+        position: fixed;
+        width: 50%;
+     }
 
 }
 
