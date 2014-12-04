@@ -3,7 +3,13 @@ pdf.stroke_horizontal_rule
 
 pdf.move_down(30)
 
-pdf.image "#{Rails.root}/public#{@course.image_url(:thumb)}", :position => :center
+if @course.image.blank?
+else
+	img = "#{Rails.root}/public#{@course.image_url(:thumb)}"
+	if FileTest.exist?(img)
+		pdf.image img, :position => :center
+	end	
+end
 
 pdf.move_down(30)
 

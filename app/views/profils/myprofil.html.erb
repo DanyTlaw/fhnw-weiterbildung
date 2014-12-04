@@ -3,37 +3,43 @@
     <div class="col-md-8" style="width: 100%">
       <div class="panel panel-primary">
         <div class="panel-heading clearfix">
-          <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Kursinformationen zum Kurs <%= @profil.schulname %></h4><p id="notice"><%= notice %></p>
+          <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Ihr Profil</h4><p id="notice"><%= notice %></p>
         </div>
-        <p>
-          <strong>Schulname:</strong>
-          <%= @profil.schulname %>
-        </p>
+         <div class="panel-body" >
+          <% if !@profil.blank? %>
+            <p>
+              <strong>Schulname:</strong>
+              <%= @profil.schulname %>
+            </p>
 
-        <p>
-          <strong>Standort:</strong>
-          <%= @profil.standort %>
-        </p>
+            <p>
+              <strong>Standort:</strong>
+              <%= @profil.standort %>
+            </p>
 
-        <p>
-          <strong>Fachbereich:</strong>
-          <%= @profil.fachbereich %>
-        </p>
+            <p>
+              <strong>Fachbereich:</strong>
+              <%= @profil.fachbereich %>
+            </p>
 
-        <p>
-          <strong>Info:</strong>
-          <%= @profil.info %>
-        </p>
+            <p>
+              <strong>Info:</strong>
+              <%= @profil.info %>
+            </p>
 
-        <p>
-          <strong>Link:</strong>
-          <%= @profil.link %>
-        </p>
+            <p>
+              <strong>Link:</strong>
+              <%= @profil.link %>
+            </p>
 
-        <p>
-          <strong>Kurse:</strong>
-          <%= @profil.kurse %>
-        </p>
+            <p>
+              <strong>Kurse:</strong>
+              <%= @profil.kurse %>
+            </p>
+          <% else %>
+              <p>Sie haben noch kein Profil erfasst. <%= link_to "Profil erstellen", new_profil_path %></p>
+          <% end %>
+         </div>
       </div>
     </div>
   </div>
