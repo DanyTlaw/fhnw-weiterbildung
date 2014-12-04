@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2>Mini Packet</h2>
+			<p><span class="fa fa-check text-success">2 Kurse zu erfassen</p>
+			<p>Wenn Sie sich für dieses Packet interessieren
+			   drücken Sie bitte den Button</p>
+			<p><%= link_to "Packet bestellen", paymail_path(:user => current_user,:amount => 2), :class => "btn btn-primary whitelink" %></p>
+		</div>
+		<div class="col-md-4">
+			<h2>Medium Packet</h2>
+			<p><span class="fa fa-check text-success">5 Kurse zu erfassen</p>
+			<p>Wenn Sie sich für dieses Packet interessieren
+			   drücken Sie bitte den Button</p>
+			<p><%= link_to "Packet bestellen", paymail_path(:user => current_user,:amount => 5), :class => "btn btn-primary whitelink" %></p>
+
+		</div>
+		<div class="col-md-4">
+			<h2>Large Packet</h2>
+			<p><span class="fa fa-check text-success">10 Kurse zu erfassen</p>
+			<p>Wenn Sie sich für dieses Packet interessieren
+			   drücken Sie bitte den Button</p>
+			<p><%= link_to "Packet bestellen", paymail_path(:user => current_user,:amount => 10), :class => "btn btn-primary whitelink" %></p>
+		</div>
+	</div>
+</div>
+
+
