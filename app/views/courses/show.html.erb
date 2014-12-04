@@ -13,7 +13,7 @@
                 </div>               
             </div>
              <div class="panel-body" >
-                  <div id="rdetails" class="padding_top"> 
+                  <div id="ldetails" class="padding_top"> 
                     <table id="showcourse">
                       <tr>
                         <td><strong>Kurstyp:</strong></td>
@@ -45,46 +45,47 @@
                         <td><%= number_to_currency(@course.preis, locale: :ch) %></td>
                       </tr>
                     </table> 
-                    <p class="padding_top">
-                      <strong>Bild:</strong> <br />
-                      <%= image_tag @course.image_url(:thumb) if @course.image? %>
-                    </p>   
                   </div>
-
-                  <div id="ldetails" class="padding_top">
-                    <table id="showcourse">
+                  
+                  <div id="rdetails" class="padding_top">
+                    <table id="showcourse" style="table-layout: fixed">
                       <tr>
-                        <td><strong>Zielpublikum:</strong></td>
-                        <td><%= @course.zielpublikum %></td>
-                      </tr>
-
-                      <tr>
-                        <td><strong>Zulassung:</strong></td>
-                        <td><%= @course.zulassung %></td>
-                      </tr>
-
+                        <td><strong>Bild:</strong> </td>
+                        <td><%= image_tag @course.image_url(:thumb) if @course.image? %></td>
+                      </tr> 
                       <tr>
                         <td><strong>Abschluss:</strong></td>
                         <td><%= @course.abschluss %></td>
                       </tr>
-
                       <tr>
                         <td><strong>Info:</strong></td>
-                        <td><%= link_to 'Link', url_protocol(@course.info), target: '_blank' %></td>
+                        <td><%= link_to 'Hier erhalten Sie Detailinformationen', url_protocol(@course.info), target: '_blank' %></td>
                       </tr>
-
                       <tr>
                         <td><strong>Kontakt:</strong></td>
                         <td><%= mail_to @course.kontakt %></td>
-
                       </tr>
                       <tr><td></td></tr>
                     </table>
-                      <p class="padding_top">
-                        <strong>Inhalt:</strong>
-                        <%=simple_format h @course.inhalt %>
-                      </p>   
-                    </div>
+                  </div>
+                <div id="bdetails">
+                  <p class="padding_top">
+                    <strong>Inhalt:</strong>
+                    <%=simple_format h @course.inhalt %>
+                  </p>
+                  <p>
+                    <strong>Zielpublikum:</strong>
+                    <%= simple_format h @course.zielpublikum %>
+                  </p>
+                  <p>
+                    <strong>Zulassung:</strong>
+                    <%= simple_format h @course.zulassung %>
+                  </p>
+
+                </div>
+
+
+
                 </div>
               </div>
             </div>
