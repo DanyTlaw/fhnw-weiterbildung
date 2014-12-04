@@ -60,6 +60,18 @@
                     </form>
                 <% end %>
 
+              </div>
+                  <div class="col-md-8" style="padding-top: 10px">
+                    <% if current_user.ccounter == 0%>
+                      <p>Sie Haben kein Guthaben mehr um Kürse zu erfassen. Wenn Sie mehr wollen gehen sie zu unserer Preisliste.</p>
+                      <form action= "<%=  pricelist_path %>" style="float: left;margin-right: 10px" >
+                        <button class="btn btn-primary">Preisliste </button>
+                      </form>
+                    <% else %>
+                      <p>Sie haben noch ein Kurserfassungs Guthaben von : <%= current_user.ccounter %></p>
+                    <% end %>
+
+                  </div>
 
               </div>
             </div>

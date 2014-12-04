@@ -12,4 +12,12 @@ class StaticsController < ApplicationController
     render :dashboard
   end
 
+  def sendPayMail
+
+    PayMailer.pay_email(params[:user],params[:amount]).deliver
+  end
+
+  def pricelist
+      render :pricelist
+  end
 end

@@ -21,11 +21,13 @@
             <form action= "<%= new_user_session_path %>" >
               <button class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown"><%= current_user.email %><span class="caret"></span></button>
                <ul class="dropdown-menu" role="menu">
+                <li><%= link_to "Mein Profil", myprofil_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Dashboard", dashboard_path %></li>
+                <li class="divider"></li>
                 <li><%= link_to "Meine Kurse", mycourses_path %></li>
                 <li class="divider"></li>
-                <li><%= link_to "Neuen Kurs eintragen", new_course_path %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Mein Profil", myprofil_path %></li>
+                <li><%= link_to "Neuen Kurs eintragen", new_course_path %></li> 
               </ul>
             </form>
           </li>
