@@ -9,7 +9,7 @@ class PayMailer < ActionMailer::Base
   	attachments['esr.png'] = File.read("#{Rails.root}/public/images/esr.png")
   	mail(to: @user.email, subject: 'Rechnung für weitere Kurserfassungen')
 
-  	redirect_to dashboard_path, notice: "Rechnung wurde per Email gesendet"
+
 
   end
 end

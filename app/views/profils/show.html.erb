@@ -39,6 +39,10 @@
               <strong>Kurse:</strong>
               <%= @profil.kurse %>
             </p>
+            <p>
+              <strong>Bild:</strong>
+              <%= image_tag @profil.image_url(:thumb) if @profil.image? %>
+            </p>
             </div>
           </div>
         </div>
