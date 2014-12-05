@@ -1,23 +1,24 @@
 <div id="siteAds">
   <% @siteAds = randomAds %>
+  <% @adpictures = getImageAd(@siteAds)%>
     <div id ="ad1" class="border-form-div" style="margin-top: 20px;">
-      <%= image_tag(getImageAd(@siteAds[0]))  %>
+      <%= image_tag(@adpictures[0])  %>
 
     </div>
     <div id ="ad2" class="border-form-div" style="margin-top: 20px;">
-      <%= image_tag("fhbern.png")  %>
+      <%= image_tag(@adpictures[1])   %>
 
     </div>
     <div id ="ad3" class="border-form-div" style="margin-top: 20px;">
-      <%= image_tag("fhbern.png")  %>
+      <%= image_tag(@adpictures[2])   %>
 
     </div>
     <div id ="ad4" class="border-form-div" style="margin-top: 20px;">
-      <%= image_tag("fhnw.png")  %>
+      <%= image_tag(@adpictures[3])   %>
 
     </div>
     <div id ="ad5" class="border-form-div" style="margin-top: 20px;">
-      <%= image_tag("fhbern.png")  %>
+      <%= image_tag(@adpictures[4])   %>
 
     </div>
 
