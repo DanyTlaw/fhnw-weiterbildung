@@ -8,6 +8,9 @@ class CoursesController < ApplicationController
     # Search parameter, if empty show all
     @searchparam = params[:search]
 
+    # Aufruf fuer die due emails welche abgelaufene kurse anzeigt
+    # checkdue
+
     # New - Dynamic Grid
     @courses_grid = initialize_grid(Course.where("titel ILIKE ?", "%#{@searchparam}%"))
   end
@@ -31,11 +34,22 @@ class CoursesController < ApplicationController
   def edit
   end
 
+  def checkdue
+    @duecourses = Course.all
+    @duecourses.each do |dc|
+      if dc.start.past? && !dc.duesend
+        PayMailer.due_email(dc.owner, dc.id).deliver
+        dc.update_attribute :duesend, true
+      end
+    end
+  end
+
   # POST /courses
   # POST /courses.json
   def create
     @course = Course.new(course_params)
     @course.owner = current_user.id
+    @course.duesend = false
     @user = current_user
 
     #erhöht den profilstatus nur beim ersten mal Kurs erstellen
@@ -96,6 +110,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image, :owner)
+      params.require(:course).permit(:titel, :kurstyp, :start, :anbieter, :ort, :preis, :inhalt, :zielpublikum, :zulassung, :abschluss, :info, :leitung, :kontakt, :image, :owner, :duesend)
     end
 end

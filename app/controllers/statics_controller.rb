@@ -17,6 +17,11 @@ class StaticsController < ApplicationController
     redirect_to(dashboard_path, :notice => 'Rechnung wurde per Email gesendet')
   end
 
+  def sendAdMail
+    PayMailer.ad_email(params[:user]).deliver
+    redirect_to(dashboard_path, :notice => 'Rechnung wurde per Email gesendet')
+  end
+
   def pricelist
       render :pricelist
   end
