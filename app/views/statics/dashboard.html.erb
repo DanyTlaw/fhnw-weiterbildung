@@ -6,27 +6,27 @@
           <h3 class="panel-title">Dashboard</h3>
         </div>
             <div class="panel-body" >
-              <div class="col-md-8" style="width: 100%">
+              <div class="col-md-8" >
                 <div>
                   <% if Course.where(owner:  current_user).blank? %>
-                    <p><span class="fa fa-close text-danger">Sie haben noch kein Kurs erfasst. <%= link_to "Kurs erstellen", new_course_path %></p>
+                    <p><span class="fa fa-close text-danger">Sie haben noch kein Kurs erfasst. <%= link_to "Kurs erstellen", new_course_path %></span></p>
                   <% else %>
                     <p><span class="fa fa-check text-success">Sie haben ein Kurs erstellt</span></p>
                   <% end %>
                 </div>
                 <div >
                   <% if Profil.where(user_id:  current_user).blank? %>
-                    <p><span class="fa fa-close text-danger">Sie haben noch kein Profil erfasst. <%= link_to "Profil erstellen", new_profil_path %></p>
+                    <p><span class="fa fa-close text-danger">Sie haben noch kein Profil erfasst. <%= link_to "Profil erstellen", new_profil_path %></span></p>
                   <% else %>
-                    <p><span class="fa fa-check text-success">Sie haben ein Kurs erstellt</span></p>
+                    <p><span class="fa fa-check text-success">Sie haben ein Profil erstellt</span></p>
                   <% end %>
 
                 </div>
                 <div>
-                  <p><span class="fa fa-close text-danger">Sie haben noch kein Inserat erfasst. <%= link_to "Inserat erstellen", root_path %></p>
+                  <p><span class="fa fa-close text-danger">Sie haben noch keine Werbung aufgeschaltet. <%= link_to "Werbung aufschalten", pricelist_path %></span></p>
                 </div>
               </div>
-              <div class="col-md-8" style="width: 100%">
+              <div class="col-md-8" >
                 <div class="progress">
                   <% if current_user.profilstatus == 0 %>
                   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
@@ -63,12 +63,12 @@
               </div>
                   <div class="col-md-8" style="padding-top: 10px">
                     <% if current_user.ccounter == 0%>
-                      <p>Sie Haben kein Guthaben mehr um Kürse zu erfassen. Wenn Sie mehr wollen gehen sie zu unserer Preisliste.</p>
+                      <p>Sie Haben kein Guthaben mehr um Kurse zu erfassen. Wenn Sie mehr wollen gehen sie zu unserer Preisliste.</p>
                       <form action= "<%=  pricelist_path %>" style="float: left;margin-right: 10px" >
                         <button class="btn btn-primary">Preisliste </button>
                       </form>
                     <% else %>
-                      <p>Sie haben noch ein Kurserfassungs Guthaben von : <%= current_user.ccounter %></p>
+                      <p>Sie haben noch ein Kursguthaben von : <%= current_user.ccounter %></p>
                     <% end %>
 
                   </div>
@@ -78,4 +78,3 @@
           </div>
         </div>
       </div>
-    </div>

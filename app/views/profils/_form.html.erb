@@ -34,6 +34,10 @@
             <%= f.label :link, :class=>"control-label" %><br>
             <%= f.url_field :link, :placeholder => 'link', :class=>"form-control" %>
           </div>
+          <div class="field">
+            <%= image_tag @profil.image_url(:thumb) if @profil.image? %>
+            <%= f.file_field :image %>
+          </div> 
           <div class="actions">
             <%= f.submit "Erfassen", :class=>'btn btn-primary'  %>
           </div>

@@ -104,7 +104,7 @@
 }
 
 .container {
-  width: 80%;
+  width: 78%;
   margin-left: 20px;
   margin-top: 20px;
   float: left;
@@ -168,6 +168,12 @@
     margin-top: 20px;
 
 }
+.border-form-div{
+    padding-top: 20px;
+    padding-bottom:20px;
+    padding-left:0px;
+    padding-right:0px;
+}
 
 /************************************************************************************
 Ads
@@ -175,7 +181,7 @@ Ads
 #siteAds{
   float: left;
 
-  height: auto;
+  height: 20%;
   width: auto;
 
 }

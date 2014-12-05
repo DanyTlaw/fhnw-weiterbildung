@@ -36,6 +36,10 @@
               <strong>Kurse:</strong>
               <%= @profil.kurse %>
             </p>
+            <p>
+              <strong>Bild:</strong>
+              <%= image_tag @profil.image_url(:thumb) if @profil.image? %>
+            </p>
           <% else %>
               <p>Sie haben noch kein Profil erfasst. <%= link_to "Profil erstellen", new_profil_path %></p>
           <% end %>

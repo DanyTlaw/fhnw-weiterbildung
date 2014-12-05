@@ -1,3 +1,35 @@
-// Place all the styles related to the profils controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#rdetails, #ldetails{
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 40%;
+	float: left;
+
+
+}
+
+#bdetails{
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-top: 30px;
+	clear: both;
+	word-wrap: break-word;
+
+}
+
+.padding_top{
+	padding-top: 20px;
+}
+
+#showcourse{
+	width: 100%;
+	table-layout: fixed;
+	td{
+		vertical-align: top;
+		word-wrap: break-word;
+		height:auto;
+	}
+}
+
+#title_pdf{
+		display: inline;
+}
