@@ -8,15 +8,15 @@ class CoursesController < ApplicationController
     # Search parameter, if empty show all
     @searchparam = params[:search]
 
-    # Aufruf fuer die due emails welche abgelaufene kurse anzeigt
+    # Call to delete old courses and mail owner
     # checkdue
 
-    # New - Dynamic Grid
+    # New - Dynamic Grid for all the courses
     @courses_grid = initialize_grid(Course.where("titel ILIKE ?", "%#{@searchparam}%"))
   end
 
   def mycourses
-    # Show only his courses
+    # Show only owners courses
     @courses = Course.where(owner: current_user)
   end
 
@@ -35,8 +35,10 @@ class CoursesController < ApplicationController
   end
 
   def checkdue
+    # First get the courses
     @duecourses = Course.all
     @duecourses.each do |dc|
+      # Check for each course if past and no email sent yet
       if dc.start.past? && !dc.duesend
         PayMailer.due_email(dc.owner, dc.id).deliver
         dc.update_attribute :duesend, true
@@ -47,25 +49,24 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    # Create course with user set
     @course = Course.new(course_params)
     @course.owner = current_user.id
     @course.duesend = false
     @user = current_user
 
-    #erhöht den profilstatus nur beim ersten mal Kurs erstellen
+    # Only increment profilestatus when not done yet
     if Course.where(owner:  current_user).blank?
       @user.increment!(:profilstatus)
     end
 
     # Does he have enough credits to create a course?
     if @user.ccounter >= 1
-      @course = Course.new(course_params)
-      @course.owner = current_user.id
       respond_to do |format|
         if @course.save
           # Created, so edit counter
           @user.update_attribute(:ccounter, @user.ccounter-1)
-          format.html { redirect_to @course, notice: 'Course was successfully created.' }
+          format.html { redirect_to @course, notice: 'Kurs wurde erfolgreich erstellt.' }
           format.json { render :show, status: :created, location: @course }
         else
           format.html { render :new }
@@ -83,7 +84,7 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to @course, notice: 'Kurs erfolgreich aktualisiert.' }
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit }
@@ -95,9 +96,10 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
+    # Straight forward, delete course
     @course.destroy
     respond_to do |format|
-      format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }
+      format.html { redirect_to courses_url, notice: 'Kurs erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

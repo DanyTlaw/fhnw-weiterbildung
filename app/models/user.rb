@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 private
-
+	# A new User can create one course for free
 	def addCourses
 		self.ccounter = 1         	
 	end         
