@@ -5,7 +5,7 @@
         <div class="panel-heading clearfix">
           <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Ihr Profil</h4>
             <% if can? :cud, @profil %>
-              <%= link_to "Kurs bearbeiten", edit_profil_path(@profil) , class: 'btn btn-default btn-sm pull-right' %>
+              <%= link_to "Profil bearbeiten", edit_profil_path(@profil) , class: 'btn btn-default btn-sm pull-right' %>
             <% end %>
         </div>
          <div class="panel-body" >
