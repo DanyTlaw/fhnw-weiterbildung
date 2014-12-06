@@ -5,16 +5,17 @@ class ProfilsController < ApplicationController
   # GET /profils
   # GET /profils.json
   def index
+    # Initalize table
     @profils_grid = initialize_grid(Profil)
   end
 
   # GET /profils/1
   # GET /profils/1.json
   def show
-
   end
 
   def myprofil
+    # Show his own profile
     @profil = Profil.find_by user_id: current_user
   end
 
@@ -33,15 +34,15 @@ class ProfilsController < ApplicationController
     @profil = Profil.new(profil_params)
     @profil.user_id = current_user.id
     @user = current_user
-    #erhöht den profilstatus nur beim ersten mal erstellen eines Profils
+
+    # Only increment profilestatus if not done yet
     if Profil.where(user_id:  current_user).blank?
       @user.increment!(:profilstatus)
-
     end
 
     respond_to do |format|
       if @profil.save
-        format.html { redirect_to @profil, notice: 'Profil was successfully created.' }
+        format.html { redirect_to @profil, notice: 'Profil erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @profil }
       else
         format.html { render :new }
@@ -55,7 +56,7 @@ class ProfilsController < ApplicationController
   def update
     respond_to do |format|
       if @profil.update(profil_params)
-        format.html { redirect_to @profil, notice: 'Profil was successfully updated.' }
+        format.html { redirect_to @profil, notice: 'Profil erfolgreich aktualisiert.' }
         format.json { render :show, status: :ok, location: @profil }
       else
         format.html { render :edit }
@@ -67,6 +68,7 @@ class ProfilsController < ApplicationController
   # DELETE /profils/1
   # DELETE /profils/1.json
   def destroy
+    # Delete profile
     @profil.destroy
     respond_to do |format|
       format.html { redirect_to profils_url, notice: 'Profil was successfully destroyed.' }
