@@ -55,7 +55,7 @@
                     </form>
                 <% end %>
                 <% if !Profil.where(user_id:  current_user).blank? %>
-                    <form action= "<%= root_path %>" style="float: left;margin-right: 10px" >
+                    <form action= "<%= myprofil_path %>" style="float: left;margin-right: 10px" >
                       <button class="btn btn-primary">Mein Profil </button>
                     </form>
                 <% end %>

@@ -4,42 +4,37 @@
       <div class="panel panel-primary">
         <div class="panel-heading clearfix">
           <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Informationen zu <%= @profil.schulname %></h4>
-            <div class="btn-group pull-right">
-                <% if can? :cud, @profil %>
-                  <%= link_to "Profil bearbeiten", edit_profil_path(@profil) , class: 'btn btn-default btn-sm' %>
-                <% end %>
-            </div>     
           </div>
             <div class="panel-body">
               <div id="ldetails" class="padding_top"> 
                 <table id="showcourse">
                     <tr>
-                      <td><stdong>Schulname:</stdong></td>
+                      <td><strong>Schulname:</strong></td>
                       <td><%= @profil.schulname %></td>
                     </tr>
 
                     <tr>
-                      <td><stdong>Standort:</stdong></td>
+                      <td><strong>Standort:</strong></td>
                       <td><%= @profil.standort %></td>
                     </tr>
 
                     <tr>
-                      <td><stdong>Fachbereich:</stdong></td>
+                      <td><strong>Fachbereich:</strong></td>
                       <td><%= @profil.fachbereich %></td>
                     </tr>
 
 
                     <tr>
-                      <td><stdong>Info:</stdong></td>
+                      <td><strong>Info:</strong></td>
                       <td><%= @profil.info %></td>
                     </tr>
 
                     <tr>
-                      <td><stdong>Link:</stdong></td>
+                      <td><strong>Link:</strong></td>
                       <td><%= @profil.link %></td>
                     </tr>
                     <tr>
-                      <td><stdong>Bild:</stdong></td>
+                      <td><strong>Bild:</strong></td>
                       <td><%= image_tag @profil.image_url(:thumb) if @profil.image? %></td>
                     </tr>
                   </table>

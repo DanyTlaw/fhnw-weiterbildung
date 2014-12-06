@@ -3,43 +3,46 @@
     <div class="col-md-8" style="width: 100%">
       <div class="panel panel-primary">
         <div class="panel-heading clearfix">
-          <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Ihr Profil</h4><p id="notice"><%= notice %></p>
+          <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Ihr Profil</h4>
+            <% if can? :cud, @profil %>
+              <%= link_to "Kurs bearbeiten", edit_profil_path(@profil) , class: 'btn btn-default btn-sm pull-right' %>
+            <% end %>
         </div>
          <div class="panel-body" >
           <% if !@profil.blank? %>
-            <p>
-              <strong>Schulname:</strong>
-              <%= @profil.schulname %>
-            </p>
+             <div id="ldetails" class="padding_top"> 
+                <table id="showcourse">
+                    <tr>
+                      <td><strong>Schulname:</strong></td>
+                      <td><%= @profil.schulname %></td>
+                    </tr>
 
-            <p>
-              <strong>Standort:</strong>
-              <%= @profil.standort %>
-            </p>
+                    <tr>
+                      <td><strong>Standort:</strong></td>
+                      <td><%= @profil.standort %></td>
+                    </tr>
 
-            <p>
-              <strong>Fachbereich:</strong>
-              <%= @profil.fachbereich %>
-            </p>
+                    <tr>
+                      <td><strong>Fachbereich:</strong></td>
+                      <td><%= @profil.fachbereich %></td>
+                    </tr>
 
-            <p>
-              <strong>Info:</strong>
-              <%= @profil.info %>
-            </p>
 
-            <p>
-              <strong>Link:</strong>
-              <%= @profil.link %>
-            </p>
+                    <tr>
+                      <td><strong>Info:</strong></td>
+                      <td><%= @profil.info %></td>
+                    </tr>
 
-            <p>
-              <strong>Kurse:</strong>
-              <%= @profil.kurse %>
-            </p>
-            <p>
-              <strong>Bild:</strong>
-              <%= image_tag @profil.image_url(:thumb) if @profil.image? %>
-            </p>
+                    <tr>
+                      <td><strong>Link:</strong></td>
+                      <td><%= @profil.link %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bild:</strong></td>
+                      <td><%= image_tag @profil.image_url(:thumb) if @profil.image? %></td>
+                    </tr>
+                  </table>
+                </div>
           <% else %>
               <p>Sie haben noch kein Profil erfasst. <%= link_to "Profil erstellen", new_profil_path %></p>
           <% end %>
