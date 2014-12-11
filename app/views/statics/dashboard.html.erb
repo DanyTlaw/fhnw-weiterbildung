@@ -9,7 +9,7 @@
               <div class="col-md-8" >
                 <div>
                   <% if Course.where(owner:  current_user).blank? %>
-                    <p><span class="fa fa-close text-danger">Sie haben noch kein Kurs erfasst. <%= link_to "Kurs erstellen", new_course_path %></span></p>
+                    <p><span class="fa fa-close text-danger">Sie haben noch keinen Kurs erfasst. <%= link_to "Kurs erstellen", new_course_path %></span></p>
                   <% else %>
                     <p><span class="fa fa-check text-success">Sie haben ein Kurs erstellt</span></p>
                   <% end %>
@@ -68,7 +68,7 @@
                         <button class="btn btn-primary">Preisliste </button>
                       </form>
                     <% else %>
-                      <p>Sie haben noch ein Kursguthaben von : <%= current_user.ccounter %></p>
+                      <p>Sie haben noch ein Kursguthaben von: <%= current_user.ccounter %></p>
                     <% end %>
 
                   </div>
