@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205155147) do
+ActiveRecord::Schema.define(version: 20141216071328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "courses", force: true do |t|
-    t.string   "titel"
+    t.text     "titel"
     t.string   "kurstyp"
     t.date     "start"
     t.string   "anbieter"
-    t.string   "ort"
+    t.text     "ort"
     t.integer  "preis"
     t.text     "inhalt"
     t.text     "zielpublikum"
     t.text     "zulassung"
-    t.string   "abschluss"
+    t.text     "abschluss"
     t.text     "info"
-    t.string   "leitung"
+    t.text     "leitung"
     t.string   "kontakt"
     t.string   "image"
     t.datetime "created_at"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20141205155147) do
 
   create_table "profils", force: true do |t|
     t.integer  "user_id"
-    t.string   "schulname"
-    t.string   "standort"
-    t.string   "fachbereich"
-    t.string   "info"
+    t.text     "schulname"
+    t.text     "standort"
+    t.text     "fachbereich"
+    t.text     "info"
     t.string   "link"
     t.integer  "kurse"
     t.datetime "created_at"
